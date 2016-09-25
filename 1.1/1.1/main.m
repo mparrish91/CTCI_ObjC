@@ -8,6 +8,31 @@
 
 #import <Foundation/Foundation.h>
 
+//BOOL isUnique(NSString *str)
+//{
+//    if (str.length > 128)    //Assumption
+//    {
+//        return false;
+//    }
+//    
+//    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+//    for (int i = 0; i < str.length; i++)
+//    {
+//        NSString * key = [str substringWithRange:NSMakeRange(i, 1)];
+//        if ([dict objectForKey:key] == nil)
+//        {
+//            [dict setObject:@"1" forKey:key];
+//        }
+//        else
+//        {
+//            //already a charachter entry
+//            return false;
+//        }
+//    }
+//    return true;
+//}
+
+
 BOOL isUnique(NSString *str)
 {
     if (str.length > 128)    //Assumption

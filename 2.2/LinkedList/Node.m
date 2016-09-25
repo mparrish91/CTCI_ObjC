@@ -76,12 +76,15 @@
 
 
 // MARK: Pass By Reference (by pointer)
-- (Node *)nthToLast:(int)k withHead:(Node *)head andCounter: (int *)i
+- (Node *)nthToLast:(int)k withHead:(Node *)head andCounter: (int *)i    //using pointer to i
 {
     if (head == nil) {
         return 0;
     }
     Node *nd = [self nthToLast:k withHead:head.next andCounter:i];
+    
+    //dereference, increment and reassign increment
+    //pass address of i
     *i = *i + 1;
     if (*i == k)
     {
@@ -99,6 +102,7 @@
 
 
 // MARK: Wrapper Class
+//wrap counter with class to mimic pass by reference
 - (Node *)kthToLast:(int)k withHead:(Node *)head andCounter: (Index *)idx
 {
     if (head == nil) {
