@@ -62,7 +62,7 @@ int main(int argc, const char * argv[]) {
         // insert code here...
         NSLog(@"Hello, World!");
         
-        _Bool value = isUnique(@"kappakappa");
+        BOOL value = isUnique(@"kappakappa");
         NSLog(@"%d", value);
     }
     return 0;
