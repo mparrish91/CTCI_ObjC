@@ -13,10 +13,12 @@ NSString * returnCompressedString(NSString *str)
 {
     NSMutableString *returnString = [NSMutableString string];
     
-    int letterCount = 1;
+    int letterCount = 0;
     for (int i = 0; i < str.length; i++)
     {
-        
+        letterCount++;
+
+        //if we have reached the end or if the next charachter does not match
         if (i + 1 >=  str.length || [str substringWithRange:NSMakeRange(i, 1)] != [str substringWithRange:NSMakeRange(i + 1, 1)] )
         {
             
@@ -27,13 +29,7 @@ NSString * returnCompressedString(NSString *str)
             [returnString appendString:letter];
             [returnString appendString:letterInt];
             
-            letterCount = 1;
-            
-        }
-        else
-        {
-            letterCount++;
-
+            letterCount = 0;
             
         }
         
